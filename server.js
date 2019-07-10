@@ -1,22 +1,16 @@
-if (process.env.NODE_ENV !== 'production') {
-  const dotenv = require('dotenv');
-  dotenv.config();
-}
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
-/*const knex = require('knex')({
+const knex = require('knex')({
   client: 'postgres',
   connection: {
-    host : '127.0.0.1',
-    user : 'your_database_user',
-    password : 'your_database_password',
-    database : 'myapp_test'
+    host : process.env.HOST,
+    user : process.env.USER,
+    password : process.env.PASSWORD,
+    database : process.env.DATABASE
   }
-});*/
-
-console.log('The value for variable host is: ', process.env.HOST);
+});
 
 const app = express();
 

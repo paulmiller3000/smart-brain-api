@@ -6,12 +6,13 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 
 * Clone this repository
 * Run `npm install`
+* Create a database (more to come)
 * Rename .env.example to .env and replace the following variables:	
-	host
-	user
-	password
-	database
-* Run `npm start`
+	HOST
+	USER
+	PASSWORD
+	DATABASE
+* Run `npm run start_local` to run locally
 
 ## Acknowledgments
 
