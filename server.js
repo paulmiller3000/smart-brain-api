@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
-const knex = require('knex')({
+const knex = require('knex');
+
+const db = knex({
   client: 'postgres',
   connection: {
     host : process.env.HOST,
@@ -10,6 +12,10 @@ const knex = require('knex')({
     password : process.env.PASSWORD,
     database : process.env.DATABASE
   }
+});
+
+db.select('*').from('users').then(data => {
+	console.log(data);
 });
 
 const app = express();
@@ -71,13 +77,11 @@ app.post('/register', (req, res) => {
 	        console.log(hash);
 	    });
 	});*/
-	database.users.push({
-		id: '125',
-		name: name,
+	db('users').insert({
 		email: email,
-		entries: 0,
+		name: name,
 		joined: new Date()
-	})
+	}).then(console.log)
 	res.json(database.users[database.users.length-1]);
 })
 
