@@ -6,7 +6,7 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 
 * Clone this repository
 * Run `npm install`
-* Create a database (more to come)
+* Create a Postgres database using the SQL statements in _sample-database.sql_
 * Rename .env.example to .env and replace the following variables:	
 	HOST
 	USER
