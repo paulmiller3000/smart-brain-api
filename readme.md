@@ -12,6 +12,7 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 	USER
 	PASSWORD
 	DATABASE
+	PORT
 * Run `npm run start_local` to run locally
 
 ## Acknowledgments
