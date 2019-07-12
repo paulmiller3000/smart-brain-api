@@ -27,6 +27,7 @@ app.use(cors());
 app.get('/', (req, res) => { res.send(database.users) });
 
 app.put('/image', (req, res) => { image.handleImage(db) });
+app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(db) });
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) });
 app.post('/signin', signin.handleSignin(db, bcrypt));
