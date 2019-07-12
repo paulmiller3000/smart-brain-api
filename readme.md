@@ -8,13 +8,13 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 * Run `npm install`
 * Create a Postgres database using the SQL statements in _sample-database.sql_
 * Rename .env.example to .env and replace the following variables:	
-	HOST
-	USER
-	PASSWORD
-	DATABASE
-	PORT
+	* HOST
+	* USER
+	* PASSWORD
+	* DATABASE
+	* PORT
 * Run `npm run start_local` to run locally
 
 ## Acknowledgments
 
-* Andrei Neagoie for the fantastic Complete Web Developer course
+* [Andrei Neagoie](https://github.com/aneagoie) for the fantastic [Complete Web Developer](https://www.udemy.com/the-complete-web-developer-zero-to-mastery) course
