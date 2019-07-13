@@ -15,7 +15,7 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 	* DATABASE
 	* PORT
 	* CLARIFAI_API_KEY
-* Run `npm run start_local` to run locally
+* Run `npm run dev` to run locally
 
 ## Acknowledgments
 

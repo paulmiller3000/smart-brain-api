@@ -7,16 +7,36 @@ const image = require('./controllers/image');
 const profile = require('./controllers/profile');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
-const PORT = process.env.PORT;
 
-const db = knex({
+const APP_PORT = process.env.APP_PORT;
+const ENVIRONMENT = process.env.API_ENV;
+
+let connString = {
+	host : process.env.DATABASE_HOST,
+	user : process.env.DATABASE_USER,
+	password : process.env.DATABASE_PASSWORD,
+	database : process.env.DATABASE_NAME	
+};
+
+if ( ENVIRONMENT !== 'development' ) {
+	connString['ssl'] = process.env.DATABASE_SSL
+}
+
+//ssl : process.env.DATABASE_SSL
+
+/*const db = knex({
 	client: 'postgres',
 	connection: {
 		host : process.env.DATABASE_HOST,
 		user : process.env.DATABASE_USER,
 		password : process.env.DATABASE_PASSWORD,
-		database : process.env.DATABASE_NAME
+		database : process.env.DATABASE_NAME		
 	}
+});*/
+
+const db = knex({
+	client: 'postgres',
+	connection: connString
 });
 
 const app = express();
@@ -31,6 +51,6 @@ app.get('/profile/:id', (req, res) => { profile.handleProfileGet(db) });
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) });
 app.post('/signin', signin.handleSignin(db, bcrypt));
 
-app.listen(PORT, () => {
-	console.log(`Application is running on port ${PORT}.`);
+app.listen(APP_PORT, () => {
+	console.log(`Application is running on port ${APP_PORT}.`);
 })
