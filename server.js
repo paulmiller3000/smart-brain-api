@@ -21,11 +21,10 @@ const db = knex({
 
 const app = express();
 
-
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => { res.send(database.users) });
+app.get('/', (req, res) => { res.send('API is working!') });
 app.put('/image', (req, res) => { image.handleImage(db) });
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(db) });
