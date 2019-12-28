@@ -9,13 +9,13 @@ __NOTE: This is a work in progress; I blew the repo away and restarted to refres
 * Create a Postgres database using the SQL statements in _sample-database.sql_
 * Register for your free API key at https://portal.clarifai.com/signup
 * Rename .env.example to .env and replace the following variables:	
-	* HOST
-	* USER
-	* PASSWORD
-	* DATABASE
-	* PORT
+	* DATABASE_HOST
+	* DATABASE_USER
+	* DATABASE_PASSWORD
+	* DATABASE_NAME
+	* API_PORT
 	* CLARIFAI_API_KEY
-* Run `npm run dev` to run locally
+* Run `npm run start:development` to run locally
 
 ## Acknowledgments
 
